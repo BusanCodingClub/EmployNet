@@ -1,6 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router-dom";
 
 export default function Navbar({ fixed = false }) {
@@ -33,7 +33,10 @@ export default function Navbar({ fixed = false }) {
           >
             <ul className="flex flex-col lg:flex-row list-none lg:ml-auto">
               <li className="nav-item">
-                <NavLink to="/" className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                <NavLink
+                  to="/"
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                >
                   <span className="ml-2">Home</span>
                 </NavLink>
               </li>
@@ -46,8 +49,19 @@ export default function Navbar({ fixed = false }) {
                 </a>
               </li>
               <li className="nav-item">
-                <NavLink to="/users" className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75">
+                <NavLink
+                  to="/users"
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                >
                   <span className="ml-2">People</span>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/people"
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                >
+                  <span className="ml-2">Profile</span>
                 </NavLink>
               </li>
             </ul>
