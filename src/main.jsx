@@ -1,13 +1,12 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
+import React from "react";
+import ReactDOM from "react-dom/client";
 
-import {
-  createBrowserRouter,
-  RouterProvider,
-} from "react-router-dom";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
-import MainPage from './pages/main';
-import UsersPage from './pages/users';
+import MainPage from "./pages/main";
+import UsersPage from "./pages/users";
+import PostDetail from "./components/PostDetail";
+import Project from "./pages/project";
 
 const router = createBrowserRouter([
   {
@@ -24,16 +23,20 @@ const router = createBrowserRouter([
   },
   {
     path: "/projects",
-    element: <h1>Projects Page</h1>,
+    element: <Project />,
   },
   {
     path: "/people",
     element: <h1>People Page</h1>,
   },
+  {
+    path: "/projects/detail",
+    element: <PostDetail />,
+  },
 ]);
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <RouterProvider router={router} />
-  </React.StrictMode>,
-)
+  </React.StrictMode>
+);
