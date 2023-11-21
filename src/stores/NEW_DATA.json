@@ -1,0 +1,73 @@
+{
+  "projects": [
+    {
+      "postId": "p1",
+      "recruitmentDeadline": "2023-12-15",
+      "techStack": ["React", "Node.js", "MongoDB"],
+      "teamMembersNeeded": ["개발자", "디자이너", "기획자"],
+      "category": "프로젝트",
+      "recruitmentSlots": 8,
+      "contactMethod": "https://example.com/contact",
+      "executionMethod": "온라인",
+      "expectedDurationMonths": 6,
+      "author": "김창희",
+      "avatar": "https://robohash.org/etquoaut.png?size=300x300&set=set1",
+      "content": "<html><body><p>풀스택 웹 개발 프로젝트 진행합니다<br/>관심있으신 분은 아래 링크로 연락주세요.</p></body></html>",
+      "title": "풀스택 웹 개발 프로젝트",
+      "createdDate": "2023-11-15",
+      "modifiedDate": "2023-11-15",
+      "views": 123,
+      "likes": 23,
+      "comments": [
+        {
+          "commentId": "c1",
+          "author": "댓글작성자1",
+          "content": "좋은 프로젝트네요! 관심 있습니다.",
+          "createdDate": "2023-11-16",
+          "modifiedDate": "2023-11-16"
+        },
+        {
+          "commentId": "c2",
+          "author": "대댓글마스터",
+          "content": "감사합니다! 당신을 팀에 초대하고 싶어요.",
+          "createdDate": "2023-11-17",
+          "modifiedDate": "2023-11-17"
+        }
+      ]
+    },
+    {
+      "postId": "p2",
+      "recruitmentDeadline": "2023-12-10",
+      "techStack": ["Angular", "Express", "MongoDB"],
+      "teamMembersNeeded": ["개발자", "디자이너"],
+      "category": "스터디",
+      "recruitmentSlots": 5,
+      "contactMethod": "https://example.com/contact-study",
+      "executionMethod": "오프라인",
+      "expectedDurationMonths": 3,
+      "author": "스터디마스터456",
+      "content": "<html><body><p>이 스터디에 대한 설명입니다.</p></body></html>",
+      "title": "고급 웹 개발 스터디 그룹",
+      "createdDate": "2023-11-10",
+      "modifiedDate": "2023-11-10",
+      "views": 123,
+      "likes": 23,
+      "comments": [
+        {
+          "commentId": "c3",
+          "author": "스터디열정가",
+          "content": "이런 그룹을 찾고 있었어요!",
+          "createdDate": "2023-11-12",
+          "modifiedDate": "2023-11-12"
+        },
+        {
+          "commentId": "c4",
+          "author": "스터디마스터456",
+          "content": "환영합니다! 당신과 함께할 수 있어 기쁩니다.",
+          "createdDate": "2023-11-13",
+          "modifiedDate": "2023-11-13"
+        }
+      ]
+    }
+  ]
+}

@@ -6,6 +6,8 @@ import "./index.css";
 import MainPage from "./pages/main";
 import UsersPage from "./pages/users";
 import ProfilePage from "./pages/ProfilePage";
+import PostDetail from "./components/PostDetail";
+import Project from "./pages/project";
 
 const router = createBrowserRouter([
   {
@@ -22,11 +24,15 @@ const router = createBrowserRouter([
   },
   {
     path: "/projects",
-    element: <h1>Projects Page</h1>,
+    element: <Project />,
   },
   {
     path: "/people",
     element: <ProfilePage />,
+  },
+  {
+    path: "/projects/detail",
+    element: <PostDetail />,
   },
 ]);
 
