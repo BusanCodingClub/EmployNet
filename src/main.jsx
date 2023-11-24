@@ -5,6 +5,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import MainPage from "./pages/main";
 import UsersPage from "./pages/users";
+import ProfilePage from "./pages/ProfilePage";
 import PostDetail from "./components/PostDetail";
 import Project from "./pages/project";
 
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/people",
-    element: <h1>People Page</h1>,
+    element: <ProfilePage />,
   },
   {
     path: "/projects/detail",
