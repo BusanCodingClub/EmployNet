@@ -6,7 +6,7 @@ import "./index.css";
 import MainPage from "./pages/main";
 import UsersPage from "./pages/users";
 import ProfilePage from "./pages/ProfilePage";
-import PostDetail from "./components/PostDetail";
+import PostDetail from "./components/postDetail";
 import Project from "./pages/project";
 
 const router = createBrowserRouter([
