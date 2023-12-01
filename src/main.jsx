@@ -8,6 +8,8 @@ import UsersPage from "./pages/users";
 import ProfilePage from "./pages/ProfilePage";
 import PostDetail from "./components/postDetail";
 import Project from "./pages/project";
+import Signup from "./pages/signup";
+import Signin from "./pages/signin";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,14 @@ const router = createBrowserRouter([
   {
     path: "/projects/detail",
     element: <PostDetail />,
+  },
+  {
+    path: "/signup",
+    element: <Signup />,
+  },
+  {
+    path: "/signin",
+    element: <Signin />,
   },
 ]);
 

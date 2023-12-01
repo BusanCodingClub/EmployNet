@@ -64,6 +64,22 @@ export default function Navbar({ fixed = false }) {
                   <span className="ml-2">Profile</span>
                 </NavLink>
               </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/signin"
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                >
+                  <span className="ml-2">Sign In</span>
+                </NavLink>
+              </li>
+              <li className="nav-item">
+                <NavLink
+                  to="/signup"
+                  className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
+                >
+                  <span className="ml-2">Sign Up</span>
+                </NavLink>
+              </li>
             </ul>
           </div>
         </div>
