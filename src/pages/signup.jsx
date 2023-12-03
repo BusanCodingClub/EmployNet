@@ -15,9 +15,9 @@ function Signup() {
           <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
             Get a job easily on EmployNet
           </p>
-          <form className="mb-0 mt-6 space-y-4 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
+          <form className="mb-0 mt-6 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
             <p className="text-center text-xl font-bold">Sign Up</p>
-            <label htmlFor="email" className="font-semibold">
+            <label htmlFor="email" className="block mt-4 font-semibold">
               Email
             </label>
             <input
@@ -26,7 +26,7 @@ function Signup() {
               className="w-full border-b border-gray-200 p-4 pe-12 text-sm outline-none focus:border-indigo-200"
               placeholder="Enter Email"
             />
-            <label htmlFor="name" className="font-semibold">
+            <label htmlFor="name" className="block font-semibold mt-4">
               Name
             </label>
             <input
@@ -35,7 +35,7 @@ function Signup() {
               className="w-full border-b border-gray-200 p-4 pe-12 text-sm outline-none focus:border-indigo-200"
               placeholder="Enter Name"
             />
-            <label htmlFor="category" className="font-semibold">
+            <label htmlFor="category" className="block my-4 font-semibold">
               Category
             </label>
             <select
@@ -47,7 +47,7 @@ function Signup() {
               <option value="ds">designer</option>
               <option value="pm">product manager</option>
             </select>
-            <label htmlFor="pw" className="font-semibold">
+            <label htmlFor="pw" className="block mt-4 font-semibold">
               Password
             </label>
             <input
@@ -62,19 +62,19 @@ function Signup() {
               className="w-full border-b border-gray-200 p-4 pe-12 text-sm outline-none focus:border-indigo-200"
               placeholder="Enter confirm password"
             />
+            <button
+              type="submit"
+              className="block my-8 w-full bg-indigo-600 px-5 py-3 font-medium text-white"
+            >
+              Sign Up
+            </button>
+            <p className="text-center text-sm text-gray-500">
+              Already have account ?
+              <Link className="underline" to="/signin">
+                Sign In
+              </Link>
+            </p>
           </form>
-          <button
-            type="submit"
-            className="block w-full bg-indigo-600 px-5 py-3 font-medium text-white"
-          >
-            Sign Up
-          </button>
-          <p className="text-center text-sm text-gray-500">
-            Already have account ?
-            <Link className="underline" to="/signin">
-              Sign In
-            </Link>
-          </p>
         </div>
       </div>
     </CenteredContainer>
