@@ -1,5 +1,6 @@
 import data from "../stores/NEW_DATA.json";
 import CenteredContainer from "../components/container";
+import Navbar from "../components/navbar";
 
 function PostDetail() {
   const { projects } = data;
@@ -10,8 +11,9 @@ function PostDetail() {
   const techStackString = post.techStack.join(", ");
 
   return (
-    <CenteredContainer>
-      <div className="detail-wrap  mx-auto w-4/5 h-full pt-10 text-gray-800">
+    <div className="bg-white">
+      <Navbar />
+      <div className="detail-wrap mx-auto w-4/5 text-gray-800 py-5">
         <header className="detail-header border-b-2 border-gray-300 pb-2">
           <span className="text-xs text-secondary">{post.category}</span>
           <h4 className="text-2xl font-bold mb-1">{post.title}</h4>
@@ -39,7 +41,7 @@ function PostDetail() {
           </div>
         </header>
 
-        <section className="detail-section border-b-2 border-gray-500">
+        <section className="detail-section border-b-2 ">
           <div className="projectInfoWrap p-5 bg-gray-200">
             <div className="bg-white p-3 rounded-lg">
               <ul className="w-full flex flex-wrap text-sm">
@@ -83,8 +85,9 @@ function PostDetail() {
             className="content p-5 mb-40 text-sm"
           />
           <div className="flex-col">
-            <span text-xs>연락 링크</span>
-            <a href={post.contactMethod}>{post.contactMethod}</a>
+            <span className="text-xs">
+              연락 링크 <a href={post.contactMethod}>{post.contactMethod}</a>
+            </span>
           </div>
           {/* <a
           href={`/like/${post.postId}`}
@@ -125,8 +128,49 @@ function PostDetail() {
             </form>
           </div>
         </footer>
+        {/* 댓글 부분 */}
+        <div className="comment-wrap flex-column px-3 py-7 mx-auto mt-5 text-gray-800 bg-gray-50">
+          {/* 남이 남긴 코멘트 */}
+          <div className="userComment mb-3">
+            <a href="/user/_id" className="profile flex-center">
+              <img
+                src={post.avatar}
+                alt={post.postId}
+                className="inline-block mr-1 w-6 h-6 border rounded-full"
+              />
+              <span className="author text-sm">
+                {/* {post.author} */}
+                {"박땡땡"}
+              </span>
+            </a>
+            <div className="max-w-xs mt-2 ml-2 p-2 border-box border rounded-xl rounded-tl-none bg-white text-sm">
+              {"저도 참여하고 싶어요."}
+            </div>
+          </div>
+
+          {/* 내가 남긴 코멘트 */}
+          <div className="userAuthorComment flex flex-col items-end">
+            <a href="/user/_id" className="profile flex-center">
+              <img
+                src={post.avatar}
+                alt={post.postId}
+                className="inline-block mr-1 h-6 border rounded-full"
+              />
+              <span className="author text-sm">{post.author}</span>
+            </a>
+            <div className="max-w-xs mt-2 mr-2 p-2 border-box rounded-xl rounded-tr-none bg-blue-100 text-sm">
+              {"연락링크를 통해 연락해주세요."}
+            </div>
+          </div>
+        </div>
+
+        {/* 댓글 작성 부분 */}
+        <div className="comment-wrap flex mx-auto py-2 h-full border-t">
+          <input type="text" className="border rounded-lg p-2 flex-1 text-sm" />
+          <button className="text-white text-xs ml-2">작성</button>
+        </div>
       </div>
-    </CenteredContainer>
+    </div>
   );
 }
 
