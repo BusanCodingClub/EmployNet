@@ -11,9 +11,9 @@ function PostDetail() {
   const techStackString = post.techStack.join(", ");
 
   return (
-    <div className="bg-white">
+    <CenteredContainer>
       <Navbar />
-      <div className="detail-wrap mx-auto w-4/5 text-gray-800 py-5">
+      <div className="d-fex">
         <header className="detail-header border-b-2 border-gray-300 pb-2">
           <span className="text-xs text-secondary">{post.category}</span>
           <h4 className="text-2xl font-bold mb-1">{post.title}</h4>
@@ -170,7 +170,7 @@ function PostDetail() {
           <button className="text-white text-xs ml-2">작성</button>
         </div>
       </div>
-    </div>
+    </CenteredContainer>
   );
 }
 
