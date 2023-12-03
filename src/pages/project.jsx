@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import CenteredContainer from "../components/container";
 import Navbar from "../components/navbar";
 
@@ -7,9 +8,7 @@ function Project() {
       <Navbar />
       <ul>
         <li>
-          <a href="/projects/detail" className="text-2xl font-bold">
-            1번 게시글
-          </a>
+          <Link to="/projects/detail">1번 게시글</Link>
         </li>
       </ul>
     </CenteredContainer>
