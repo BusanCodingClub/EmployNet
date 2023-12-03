@@ -7,9 +7,7 @@ function Project() {
       <Navbar />
       <ul>
         <li>
-          <a href="/projects/detail" className="text-2xl font-bold">
-            1번 게시글
-          </a>
+          <a href="/projects/detail">1번 게시글</a>
         </li>
       </ul>
     </CenteredContainer>
