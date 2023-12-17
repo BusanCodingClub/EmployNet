@@ -42,10 +42,10 @@
       "teamMembersNeeded": ["개발자", "디자이너"],
       "category": "스터디",
       "recruitmentSlots": 5,
-      "contactMethod": "https://example.com/contact-study",
+      "contactMethod": "https://example.com/contact-side",
       "executionMethod": "오프라인",
       "expectedDurationMonths": 3,
-      "author": "스터디마스터456",
+      "author": "스터디마스터45",
       "content": "<html><body><p>이 스터디에 대한 설명입니다.</p></body></html>",
       "title": "고급 웹 개발 스터디 그룹",
       "createdDate": "2023-11-10",
@@ -62,10 +62,37 @@
         },
         {
           "commentId": "c4",
-          "author": "스터디마스터456",
+          "author": "스터디마스터45",
           "content": "환영합니다! 당신과 함께할 수 있어 기쁩니다.",
           "createdDate": "2023-11-13",
           "modifiedDate": "2023-11-13"
+        }
+      ]
+    },
+    {
+      "postId": "p3",
+      "recruitmentDeadline": "2023-12-20",
+      "techStack": [ "Express", "MongoDB", "React"],
+      "teamMembersNeeded": ["개발자", "디자이너"],
+      "category": "사이드프로젝트",
+      "recruitmentSlots": 3,
+      "contactMethod": "https://example.com/contact-study",
+      "executionMethod": "오프라인",
+      "expectedDurationMonths": 6,
+      "author": "으누",
+      "content": "<html><body><p>커뮤니티 개발.</p></body></html>",
+      "title": "사이드 프로젝트",
+      "createdDate": "2023-12-10",
+      "modifiedDate": "2023-12-10",
+      "views": 13,
+      "likes": 7,
+      "comments": [
+        {
+          "commentId": "c5",
+          "author": "김디자인",
+          "content": "같이 해보고 싶네요",
+          "createdDate": "2023-12-11",
+          "modifiedDate": "2023-12-11"
         }
       ]
     }
