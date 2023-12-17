@@ -7,7 +7,7 @@ function Project() {
     <CenteredContainer>
       <Navbar />
       <ul>
-        <li>
+        <li className="mb-0 mt-6 rounded-lg p-4 shadow-lg sm:p-6 lg:p-8">
           <Link to="/projects/detail">1번 게시글</Link>
         </li>
       </ul>

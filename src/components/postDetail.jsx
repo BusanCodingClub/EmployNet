@@ -13,8 +13,8 @@ function PostDetail() {
   return (
     <CenteredContainer>
       <Navbar />
-      <div className="d-fex">
-        <header className="detail-header border-b-2 border-gray-300 pb-2">
+      <div className="p-5">
+        <header className="detail-header pb-2">
           <span className="text-xs text-secondary">{post.category}</span>
           <h4 className="text-2xl font-bold mb-1">{post.title}</h4>
           <div className="post-info text-sm flex justify-between">
@@ -42,7 +42,7 @@ function PostDetail() {
         </header>
 
         <section className="detail-section border-b-2 ">
-          <div className="projectInfoWrap p-5 bg-gray-200">
+          <div className="projectInfoWrap p-5 bg-gray-50 ">
             <div className="bg-white p-3 rounded-lg">
               <ul className="w-full flex flex-wrap text-sm">
                 <li className="w-full sm:w-1/2 px-4 py-1">
@@ -106,26 +106,20 @@ function PostDetail() {
           </a>
 
           <div className="flex">
-            <form action={`/edit/${post.postId}`} method="GET">
-              <button className="inline-block text-sm px-2 py-1 mr-1 bg-gray-600 text-white rounded border-0">
-                수정
-              </button>
-            </form>
+            <button className="inline-block text-sm px-2 py-1 mr-1 bg-gray-400 text-white rounded border-0">
+              수정
+            </button>
 
-            <form action={`/delete/${post.postId}`} method="POST">
-              <button
-                type="submit"
-                className="inline-block text-sm px-2 py-1 mr-1 bg-gray-600 text-white rounded border-0"
-              >
-                삭제
-              </button>
-            </form>
+            <button
+              type="submit"
+              className="inline-block text-sm px-2 py-1 mr-1 bg-gray-400 text-white rounded border-0"
+            >
+              삭제
+            </button>
 
-            <form action="/write" method="GET">
-              <button className="inline-block text-sm px-2 py-1 bg-gray-700 text-white rounded border-0">
-                글작성
-              </button>
-            </form>
+            <button className="relative inline-block text-sm font-semibold px-2 py-1 bg-gray-800 text-white rounded border-0">
+              글작성
+            </button>
           </div>
         </footer>
         {/* 댓글 부분 */}
