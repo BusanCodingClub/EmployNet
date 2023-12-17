@@ -1,14 +1,41 @@
-import data from "../stores/NEW_DATA.json";
+// import data from "../stores/NEW_DATA.json";
+import { useParams } from "react-router-dom";
 import CenteredContainer from "../components/container";
 import Navbar from "../components/navbar";
+import { useEffect, useState } from "react";
+import { API_URL, axiosInstance } from "../stores/API";
 
 function PostDetail() {
-  const { projects } = data;
-  const postId = "p1";
-  const post = projects.find((item) => item.postId === postId);
+  const { postId } = useParams();
+  console.log("postId", postId);
 
-  const teamMemberString = post.teamMembersNeeded.join(", ");
-  const techStackString = post.techStack.join(", ");
+  const [post, setPost] = useState(null);
+
+  // const { projects } = data;
+  // const postId = "p1";
+  // const post = projects.find((item) => item.postId === postId);
+
+  // const teamMemberString = post.teamMembersNeeded.join(", ");
+  // const techStackString = post.techStack.join(", ");
+
+  const [teamMemberString, setTeamMemberString] = useState("");
+  const [techStackString, setTechStackString] = useState("");
+
+  useEffect(() => {
+    axiosInstance.get(`${API_URL.PROJECTS}/${postId}`).then((response) => {
+      console.log(response.data);
+      setPost(response.data);
+
+      setTeamMemberString(response.data.teamMembersNeeded.join(", "));
+      setTechStackString(response.data.techStack.join(", "));
+    }).catch((error) => {
+      console.log("PostDetail", error);
+    })
+  }, []);
+
+  if (!post) {
+    return <div>loading...</div>;
+  }
 
   return (
     <CenteredContainer>

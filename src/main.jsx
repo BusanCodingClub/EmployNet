@@ -6,7 +6,7 @@ import "./index.css";
 import MainPage from "./pages/main";
 import UsersPage from "./pages/users";
 import ProfilePage from "./pages/ProfilePage";
-import PostDetail from "./components/postDetail";
+import PostDetail from "./pages/postDetail";
 import Project from "./pages/project";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin";
@@ -33,7 +33,7 @@ const router = createBrowserRouter([
     element: <ProfilePage />,
   },
   {
-    path: "/projects/detail",
+    path: "/projects/:postId",
     element: <PostDetail />,
   },
   {
