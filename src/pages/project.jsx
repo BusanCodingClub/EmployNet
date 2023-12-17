@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import CenteredContainer from "../components/container";
 import Navbar from "../components/navbar";
-import ProjectList from "../components/ProjectList";
+import ProjectList from "../components/projectList";
 import { API_URL, axiosInstance } from "../stores/API";
 
 function Project() {
