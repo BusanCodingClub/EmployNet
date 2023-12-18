@@ -1,5 +1,5 @@
 // import data from "../stores/NEW_DATA.json";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import CenteredContainer from "../components/container";
 import Navbar from "../components/navbar";
 import { useEffect, useState } from "react";
@@ -22,15 +22,18 @@ function PostDetail() {
   const [techStackString, setTechStackString] = useState("");
 
   useEffect(() => {
-    axiosInstance.get(`${API_URL.PROJECTS}/${postId}`).then((response) => {
-      console.log(response.data);
-      setPost(response.data);
+    axiosInstance
+      .get(`${API_URL.PROJECTS}/${postId}`)
+      .then((response) => {
+        console.log(response.data);
+        setPost(response.data);
 
-      setTeamMemberString(response.data.teamMembersNeeded.join(", "));
-      setTechStackString(response.data.techStack.join(", "));
-    }).catch((error) => {
-      console.log("PostDetail", error);
-    })
+        setTeamMemberString(response.data.teamMembersNeeded.join(", "));
+        setTechStackString(response.data.techStack.join(", "));
+      })
+      .catch((error) => {
+        console.log("PostDetail", error);
+      });
   }, []);
 
   if (!post) {
@@ -46,14 +49,17 @@ function PostDetail() {
           <h4 className="text-2xl font-bold mb-1">{post.title}</h4>
           <div className="post-info text-sm flex justify-between">
             <div className="left flex items-center text-secondary">
-              <a href="/user/_id" className="flex items-center">
+              <Link
+                to={`/user-info/${post.author}`}
+                className="flex items-center"
+              >
                 <img
                   src={post.avatar}
                   alt={post.postId}
                   className="inline-block mr-1 w-6 h-6 border rounded-full"
                 />
                 <span className="author">{post.author}</span>
-              </a>
+              </Link>
 
               <span className="mx-2 font-light">|</span>
               <span>{post.createdDate}</span>

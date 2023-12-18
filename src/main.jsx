@@ -10,6 +10,7 @@ import PostDetail from "./pages/postDetail";
 import Project from "./pages/project";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin";
+import UserInfo from "./pages/userInfo";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/signin",
     element: <Signin />,
+  },
+  {
+    path: "/user-info/:userId",
+    element: <UserInfo />,
   },
 ]);
 
