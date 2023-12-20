@@ -8,7 +8,7 @@ const ProfilePage = () => {
   const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
-    axiosInstance.get(API_URL.USER_INFO).then((response) => {
+    axiosInstance.get(API_URL.USER_PROFILE).then((response) => {
       console.log(response.data);
       setUserInfo(response.data);
     });
@@ -17,9 +17,7 @@ const ProfilePage = () => {
   return (
     <CenteredContainer>
       <Navbar />
-      <div>
-        {userInfo ? <Profile userData={userInfo} /> : null}
-      </div>
+      <div>{userInfo ? <Profile userData={userInfo} /> : null}</div>
     </CenteredContainer>
   );
 };
