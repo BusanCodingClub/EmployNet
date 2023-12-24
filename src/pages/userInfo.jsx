@@ -5,7 +5,7 @@ import CenteredContainer from "../components/container";
 import Navbar from "../components/navbar";
 import { API_URL, axiosInstance } from "../stores/API";
 
-const userInfo = () => {
+const UserInfo = () => {
   const { userId } = useParams();
   console.log("userId: ", userId);
 
@@ -44,4 +44,4 @@ const userInfo = () => {
   );
 };
 
-export default userInfo;
+export default UserInfo;

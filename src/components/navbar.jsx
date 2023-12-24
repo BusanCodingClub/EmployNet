@@ -56,14 +56,14 @@ export default function Navbar({ fixed = false }) {
                   <span className="ml-2">People</span>
                 </NavLink>
               </li>
-              <li className="nav-item">
+              {/* <li className="nav-item">
                 <NavLink
                   to="/people"
                   className="px-3 py-2 flex items-center text-xs uppercase font-bold leading-snug text-white hover:opacity-75"
                 >
                   <span className="ml-2">Profile</span>
                 </NavLink>
-              </li>
+              </li> */}
               <li className="nav-item">
                 <NavLink
                   to="/signin"
