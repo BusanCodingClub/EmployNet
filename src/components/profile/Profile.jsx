@@ -10,6 +10,9 @@ function Profile({ userData }) {
   const tempID = "user01";
   const tempData = userData.find((obj) => obj.id === tempID);
 
+  //tagline
+  const viewLength = 3;
+
   //htmlData
   const tabMenus = [
     {
@@ -24,6 +27,7 @@ function Profile({ userData }) {
 
   //state
   const [menuActive, setMenuActive] = useState(0);
+  const [moreBtnClick, setMoreBtnClick] = useState(false);
 
   //tailWindClass
   const styleClass = {
@@ -39,7 +43,12 @@ function Profile({ userData }) {
         "text-center text-lg font-bold mt-3.5 mb-1.5 leading-4 md:text-left md:mt-0 md:mb-2.5 lg:text-xl lg:leading-4",
       profileCateGory:
         "text-center text-base leading-4 mb-3 md:text-left lg:leading-4",
-      profileLink: "text-base text-sky-600 font-bold cursor-pointer leading-4",
+      profileLink:
+        "text-base text-center text-sky-600 mb-6 font-bold cursor-pointer leading-4 md:text-left",
+      stackListArea: "flex flex-wrap",
+      moreBtn:
+        "px-4 py-1 bg-blue-400 text-white cursor-pointer text-sm leading-4 rounded-2xl",
+      moreBtnNone: "hidden",
     },
     profileBottom: {
       totalSection: "my-5 md:my-7",
@@ -76,6 +85,32 @@ function Profile({ userData }) {
           >
             {tempData.ownLink}
           </p>
+          <ul className={profileTop.stackListArea}>
+            {moreBtnClick
+              ? stacks.map((stack, idx) => {
+                  return <TagLine key={stack + idx} content={stack} />;
+                })
+              : stacks.map((stack, idx) => {
+                  if (idx < viewLength) {
+                    return <TagLine key={stack + idx} content={stack} />;
+                  } else {
+                    return;
+                  }
+                })}
+            <div
+              className={
+                moreBtnClick ? profileTop.moreBtnNone : profileTop.moreBtn
+              }
+              onClick={() => {
+                setMoreBtnClick((prev) => {
+                  return !prev;
+                });
+                //console.log(moreBtnClick);
+              }}
+            >
+              더보기
+            </div>
+          </ul>
         </div>
       </section>
       <div className={profileBottom.totalSection}>

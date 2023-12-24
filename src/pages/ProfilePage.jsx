@@ -8,7 +8,6 @@ const ProfilePage = () => {
     <CenteredContainer>
       <Navbar />
       <div>
-        <h1>Profile Page</h1>
         <Profile userData={PROFILE_USER_DATA} />
       </div>
     </CenteredContainer>
