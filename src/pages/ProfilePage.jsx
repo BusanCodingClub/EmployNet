@@ -1,15 +1,23 @@
 import Profile from "../components/profile/Profile";
-import { PROFILE_USER_DATA } from "../stores/mockData";
 import CenteredContainer from "../components/container";
 import Navbar from "../components/navbar";
+import { useEffect, useState } from "react";
+import { API_URL, axiosInstance } from "../stores/API";
 
 const ProfilePage = () => {
+  const [userInfo, setUserInfo] = useState(null);
+
+  useEffect(() => {
+    axiosInstance.get(API_URL.USER_PROFILE).then((response) => {
+      console.log(response.data);
+      setUserInfo(response.data);
+    });
+  }, []);
+
   return (
     <CenteredContainer>
       <Navbar />
-      <div>
-        <Profile userData={PROFILE_USER_DATA} />
-      </div>
+      <div>{userInfo ? <Profile userData={userInfo} /> : null}</div>
     </CenteredContainer>
   );
 };

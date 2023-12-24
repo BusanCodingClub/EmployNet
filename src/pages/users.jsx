@@ -1,22 +1,25 @@
-
-import React from 'react';
-import UserList from '../components/userList';
-import { USERS_DATA } from '../stores/mockData';
-import CenteredContainer from '../components/container';
-import Navbar from '../components/navbar';
+import { useEffect, useState } from "react";
+import UserList from "../components/userList";
+import CenteredContainer from "../components/container";
+import Navbar from "../components/navbar";
+import { API_URL, axiosInstance } from "../stores/API";
 
 const UsersPage = () => {
-    return (
+  const [users, setUsers] = useState(null);
 
-        <CenteredContainer>
-            <Navbar />
-            <div>
-                <h1>User Page</h1>
-                <UserList users={USERS_DATA} />
-            </div>
-        </CenteredContainer>
+  useEffect(() => {
+    axiosInstance.get(API_URL.USERS).then((response) => {
+      console.log(response.data);
+      setUsers(response.data.users);
+    });
+  }, []);
 
-    );
+  return (
+    <CenteredContainer>
+      <Navbar />
+      <div>{users ? <UserList users={users} /> : null}</div>
+    </CenteredContainer>
+  );
 };
 
 export default UsersPage;

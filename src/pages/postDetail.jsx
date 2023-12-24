@@ -1,32 +1,65 @@
-import data from "../stores/NEW_DATA.json";
+// import data from "../stores/NEW_DATA.json";
+import { Link, useParams } from "react-router-dom";
 import CenteredContainer from "../components/container";
 import Navbar from "../components/navbar";
+import { useEffect, useState } from "react";
+import { API_URL, axiosInstance } from "../stores/API";
 
 function PostDetail() {
-  const { projects } = data;
-  const postId = "p1";
-  const post = projects.find((item) => item.postId === postId);
+  const { postId } = useParams();
+  console.log("postId", postId);
 
-  const teamMemberString = post.teamMembersNeeded.join(", ");
-  const techStackString = post.techStack.join(", ");
+  const [post, setPost] = useState(null);
+
+  // const { projects } = data;
+  // const postId = "p1";
+  // const post = projects.find((item) => item.postId === postId);
+
+  // const teamMemberString = post.teamMembersNeeded.join(", ");
+  // const techStackString = post.techStack.join(", ");
+
+  const [teamMemberString, setTeamMemberString] = useState("");
+  const [techStackString, setTechStackString] = useState("");
+
+  useEffect(() => {
+    axiosInstance
+      .get(`${API_URL.PROJECTS}/${postId}`)
+      .then((response) => {
+        console.log(response.data);
+        setPost(response.data);
+
+        setTeamMemberString(response.data.teamMembersNeeded.join(", "));
+        setTechStackString(response.data.techStack.join(", "));
+      })
+      .catch((error) => {
+        console.log("PostDetail", error);
+      });
+  }, []);
+
+  if (!post) {
+    return <div>loading...</div>;
+  }
 
   return (
     <CenteredContainer>
       <Navbar />
-      <div className="d-fex">
-        <header className="detail-header border-b-2 border-gray-300 pb-2">
+      <div className="p-5">
+        <header className="detail-header pb-2">
           <span className="text-xs text-secondary">{post.category}</span>
           <h4 className="text-2xl font-bold mb-1">{post.title}</h4>
           <div className="post-info text-sm flex justify-between">
             <div className="left flex items-center text-secondary">
-              <a href="/user/_id" className="flex items-center">
+              <Link
+                to={`/user-info/${post.author}`}
+                className="flex items-center"
+              >
                 <img
                   src={post.avatar}
                   alt={post.postId}
                   className="inline-block mr-1 w-6 h-6 border rounded-full"
                 />
                 <span className="author">{post.author}</span>
-              </a>
+              </Link>
 
               <span className="mx-2 font-light">|</span>
               <span>{post.createdDate}</span>
@@ -42,7 +75,7 @@ function PostDetail() {
         </header>
 
         <section className="detail-section border-b-2 ">
-          <div className="projectInfoWrap p-5 bg-gray-200">
+          <div className="projectInfoWrap p-5 bg-gray-50 ">
             <div className="bg-white p-3 rounded-lg">
               <ul className="w-full flex flex-wrap text-sm">
                 <li className="w-full sm:w-1/2 px-4 py-1">
@@ -106,26 +139,20 @@ function PostDetail() {
           </a>
 
           <div className="flex">
-            <form action={`/edit/${post.postId}`} method="GET">
-              <button className="inline-block text-sm px-2 py-1 mr-1 bg-gray-600 text-white rounded border-0">
-                수정
-              </button>
-            </form>
+            <button className="inline-block text-sm px-2 py-1 mr-1 bg-gray-400 text-white rounded border-0">
+              수정
+            </button>
 
-            <form action={`/delete/${post.postId}`} method="POST">
-              <button
-                type="submit"
-                className="inline-block text-sm px-2 py-1 mr-1 bg-gray-600 text-white rounded border-0"
-              >
-                삭제
-              </button>
-            </form>
+            <button
+              type="submit"
+              className="inline-block text-sm px-2 py-1 mr-1 bg-gray-400 text-white rounded border-0"
+            >
+              삭제
+            </button>
 
-            <form action="/write" method="GET">
-              <button className="inline-block text-sm px-2 py-1 bg-gray-700 text-white rounded border-0">
-                글작성
-              </button>
-            </form>
+            <button className="relative inline-block text-sm font-semibold px-2 py-1 bg-gray-800 text-white rounded border-0">
+              글작성
+            </button>
           </div>
         </footer>
         {/* 댓글 부분 */}

@@ -40,5 +40,48 @@ const PROFILE_USER_DATA = [
     profileImg: ["https://randomuser.me/api/portraits/men/75.jpg"],
     ownLink: ["https://github.com"],
   },
+  {
+    id: "user02",
+    name: "으누",
+    cateGory: "웹 개발자(FE)",
+    career: "1년",
+    tagLine: {
+      stacks: ["HTML", "CSS", "JavaScript", "React", "TypeScript"],
+      미정01: [],
+      미정02: [],
+    },
+    profileMent: ["프론트엔드 개발자 으누 입니다. 잘부탁 드립니다."],
+    profileImg: ["https://randomuser.me/api/portraits/men/5.jpg"],
+    ownLink: ["https://github.com"],
+  },
+  {
+    id: "user03",
+    name: "김창희",
+    cateGory: "웹 개발자(FE)",
+    career: "1년",
+    tagLine: {
+      stacks: ["HTML", "CSS", "JavaScript", "React", "TypeScript"],
+      미정01: [],
+      미정02: [],
+    },
+    profileMent: ["안녕하세요. 프론트엔드 개발자 김창희 입니다."],
+    profileImg: ["https://randomuser.me/api/portraits/men/3.jpg"],
+    ownLink: ["https://github.com"],
+  },
+
+  {
+    id: "user04",
+    name: "스터디마스터45",
+    cateGory: "웹 개발자(FE)",
+    career: "3년",
+    tagLine: {
+      stacks: ["HTML", "CSS", "JavaScript", "React", "TypeScript"],
+      미정01: [],
+      미정02: [],
+    },
+    profileMent: ["안녕하세요. 프론트엔드 개발자 스터디마스터 입니다."],
+    profileImg: ["https://randomuser.me/api/portraits/men/1.jpg"],
+    ownLink: ["https://github.com"],
+  },
 ];
 export { USERS_DATA, PROFILE_USER_DATA };
