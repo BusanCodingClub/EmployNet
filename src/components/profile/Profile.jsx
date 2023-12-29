@@ -105,7 +105,6 @@ function Profile({ userData }) {
                 setMoreBtnClick((prev) => {
                   return !prev;
                 });
-                //console.log(moreBtnClick);
               }}
             >
               더보기
