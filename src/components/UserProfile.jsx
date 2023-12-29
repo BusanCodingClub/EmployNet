@@ -37,7 +37,7 @@ export default function UserProfile({ userData }) {
         "tracking-tight md:flex md:flex-nowrap md:flex-col md:justify-center",
       profileName:
         "text-center text-lg font-bold mt-3.5 mb-1.5 leading-4 md:text-left md:mt-0 md:mb-2.5 lg:text-xl lg:leading-4",
-      profileCateGory:
+      profileCategory:
         "text-center text-base leading-4 mb-3 md:text-left lg:leading-4",
       profileLink: "text-base text-sky-600 font-bold cursor-pointer leading-4",
     },
@@ -67,7 +67,7 @@ export default function UserProfile({ userData }) {
         </div>
         <div className={profileTop.profileInfoSection}>
           <p className={profileTop.profileName}>{tempData.name}</p>
-          <p className={profileTop.profileCateGory}>{tempData.cateGory}</p>
+          <p className={profileTop.profileCategory}>{tempData.category}</p>
           <p
             onClick={() =>
               window.open(tempData.ownLink, "_blank", "noopener", "norefeerer")

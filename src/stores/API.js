@@ -1,6 +1,6 @@
 import axios from "axios";
 import AxiosMockAdapter from "axios-mock-adapter";
-import { USERS_DATA, PROFILE_USER_DATA } from "./mockData";
+import { PROFILE_USER_DATA } from "./mockData";
 import mock_project_data from "./NEW_DATA.json";
 
 const BASE_URL = "http://localhost:8000/api/";
@@ -37,7 +37,7 @@ axiosMock.onPost(API_URL.LOGOUT).reply(200, {
 axiosMock.onGet(API_URL.USER_PROFILE).reply(200, PROFILE_USER_DATA);
 
 axiosMock.onGet(API_URL.USERS).reply(200, {
-  users: USERS_DATA,
+  users: PROFILE_USER_DATA,
 });
 
 axiosMock.onGet(API_URL.PROJECTS).reply(200, {
@@ -66,7 +66,7 @@ axiosMock.onGet(user_info_url).reply(function (config) {
 
   const id = config.url.split("/").pop();
   const userData = PROFILE_USER_DATA;
-  const user_data = userData.find((user_data) => user_data.name == id);
+  const user_data = userData.find((user_data) => user_data.id == id);
   return [200, user_data];
 });
 
