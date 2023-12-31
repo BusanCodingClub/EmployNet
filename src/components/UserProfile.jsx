@@ -9,7 +9,7 @@ export default function UserProfile({ userData }) {
   //props
 
   const tempData = userData;
-
+  const viewLength = 3;
   //htmlData
   const tabMenus = [
     {
@@ -24,6 +24,7 @@ export default function UserProfile({ userData }) {
 
   //state
   const [menuActive, setMenuActive] = useState(0);
+  const [moreBtnClick, setMoreBtnClick] = useState(false);
 
   //tailWindClass
   const styleClass = {
@@ -40,6 +41,9 @@ export default function UserProfile({ userData }) {
       profileCategory:
         "text-center text-base leading-4 mb-3 md:text-left lg:leading-4",
       profileLink: "text-base text-sky-600 font-bold cursor-pointer leading-4",
+      stackListArea: "flex flex-wrap mt-6",
+      moreBtn:
+        "px-4 py-1 bg-blue-400 text-white cursor-pointer text-sm leading-4 rounded-2xl",
     },
     profileBottom: {
       totalSection: "my-5 md:my-7",
@@ -76,6 +80,31 @@ export default function UserProfile({ userData }) {
           >
             {tempData.ownLink}
           </p>
+          <ul className={profileTop.stackListArea}>
+            {moreBtnClick
+              ? stacks.map((stack, idx) => {
+                  return <TagLine key={stack + idx} content={stack} />;
+                })
+              : stacks.map((stack, idx) => {
+                  if (idx < viewLength) {
+                    return <TagLine key={stack + idx} content={stack} />;
+                  } else {
+                    return;
+                  }
+                })}
+            {!moreBtnClick && (
+              <div
+                className={profileTop.moreBtn}
+                onClick={() => {
+                  setMoreBtnClick((prev) => {
+                    return !prev;
+                  });
+                }}
+              >
+                더보기
+              </div>
+            )}
+          </ul>
         </div>
       </section>
       <div className={profileBottom.totalSection}>
