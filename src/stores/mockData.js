@@ -43,7 +43,7 @@ const PROFILE_USER_DATA = [
   {
     id: "user02",
     name: "으누",
-    cateGory: "웹 개발자(FE)",
+    category: "웹 개발자(FE)",
     career: "1년",
     tagLine: {
       stacks: ["HTML", "CSS", "JavaScript", "React", "TypeScript"],
