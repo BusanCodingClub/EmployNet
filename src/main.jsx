@@ -11,6 +11,8 @@ import Project from "./pages/project";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin";
 import UserInfo from "./pages/userInfo";
+import ProjectCreate from "./pages/ProjectCreate";
+import ProjectUpdate from "./pages/ProjectUpdate";
 
 const router = createBrowserRouter([
   {
@@ -30,12 +32,20 @@ const router = createBrowserRouter([
     element: <Project />,
   },
   {
-    path: "/people",
-    element: <ProfilePage />,
+    path: "/projects/create",
+    element: <ProjectCreate />,
   },
   {
     path: "/projects/:postId",
     element: <PostDetail />,
+  },
+  {
+    path: "/projects/:postId/update",
+    element: <ProjectUpdate />,
+  },
+  {
+    path: "/people",
+    element: <ProfilePage />,
   },
   {
     path: "/signup",
