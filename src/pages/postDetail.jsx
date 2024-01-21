@@ -139,9 +139,12 @@ function PostDetail() {
           </a>
 
           <div className="flex">
-            <button className="inline-block text-sm px-2 py-1 mr-1 bg-gray-400 text-white rounded border-0">
+            <Link
+              className="inline-block text-sm px-2 py-1 mr-1 bg-gray-400 text-white rounded border-0"
+              to={`/projects/${postId}/update`}
+            >
               수정
-            </button>
+            </Link>
 
             <button
               type="submit"

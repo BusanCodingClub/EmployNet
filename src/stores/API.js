@@ -17,6 +17,8 @@ const API_URL = {
   USER_INFO: "user-info",
   USER_PROFILE: "user-profile",
   PROJECTS: "projects",
+  PROJECTS_CREATE: "projects/create",
+  PROJECTS_UPDATE: "projects/update",
   USERS: "users",
 };
 
@@ -44,6 +46,11 @@ axiosMock.onGet(API_URL.PROJECTS).reply(200, {
   projects: mock_project_data.projects,
 });
 
+// 프로젝트 생성 페이지
+axiosMock
+  .onPost(API_URL.PROJECTS_CREATE)
+  .reply(200, { message: "Project created successfully" });
+
 // get id as params
 const project_detail_url = new RegExp(`${API_URL.PROJECTS}/*`);
 
@@ -57,6 +64,21 @@ axiosMock.onGet(project_detail_url).reply(function (config) {
 
   return [200, project];
 });
+
+// 프로젝트 수정 페이지
+axiosMock.onGet(API_URL.PROJECTS_UPDATE).reply((config) => {
+  const urlAry = config.url.split("/");
+  const id = urlAry[urlAry.length - 1];
+  const project = mock_project_data.projects.find(
+    (project) => project.postId === id
+  );
+
+  return [200, project];
+});
+
+axiosMock
+  .onPost(API_URL.PROJECTS_UPDATE)
+  .reply(200, { message: "Project updated successfully" });
 
 //유저 상세정보 페이지
 const user_info_url = new RegExp(`${API_URL.USER_INFO}/*`);
