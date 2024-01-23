@@ -4,7 +4,9 @@ import CenteredContainer from "../components/container";
 const PreviewDesign = () => {
   return (
     <CenteredContainer>
-      <h1>Preview Design</h1>
+      <div>
+        <h1>Preview Design</h1>
+      </div>
       <div>
         <PrimaryButton>Primary Button</PrimaryButton>
         <SecondaryButton>Secondary Button</SecondaryButton>

@@ -2,10 +2,11 @@ const CenteredContainer = ({ children }) => {
   return (
     <div
       style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
+        //display: "flex",
+        //flexDirection: "column",
+        //justifyContent: "center",
         //alignItems: "center",
+        textAlign: "center",
         margin: "0 auto",
         padding: "0",
         width: "100vw",
