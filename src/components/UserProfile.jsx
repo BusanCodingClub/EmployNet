@@ -1,7 +1,4 @@
-import React from "react";
-
 import { useState } from "react";
-
 import TagLine from "./profile/TagLine";
 import TabMenu from "./profile/TabMenu";
 import Profile_Dialog from "./Profile_Dialog";
@@ -64,8 +61,26 @@ export default function UserProfile({ userData }) {
   } = tempData;
   const { profileTop, profileBottom } = styleClass;
 
+  const [isopen, setIsopen] = useState(false);
+
+  const dialogData = (isopen) => {
+    setIsopen(isopen);
+  };
+
   return (
     <div className={styleClass.wrapper}>
+      <div className="text-right mb-1">
+        <button
+          className="text-sm font-bold text-white rounded-md bg-[#00a8e8] hover:opacity-30 border-none focus:border-none focus:outline-none active:opacity-100"
+          onClick={() => {
+            setIsopen(true);
+          }}
+        >
+          수정
+        </button>
+
+        <Profile_Dialog isopen={isopen} dialogData={dialogData} />
+      </div>
       <section className={profileTop.totalSection}>
         <div className={profileTop.profileImg}>
           <img src={tempData.profileImg} alt="profile_img"></img>
@@ -74,15 +89,6 @@ export default function UserProfile({ userData }) {
         <div className={profileTop.profileInfoSection}>
           <div className="grid grid-cols-2 items-center w-fit gap-2">
             <p className="font-bold text-xl">{tempData.name}</p>
-            <div>
-              <button
-                className="text-sm font-bold text-white rounded-md bg-[#00a8e8] hover:opacity-30 border-none focus:border-none focus:outline-none"
-                onClick={() => {}}
-              >
-                수정
-              </button>
-              <Profile_Dialog />
-            </div>
           </div>
           <p className={profileTop.profileCategory}>{tempData.category}</p>
           <p
