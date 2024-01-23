@@ -5,21 +5,24 @@ const CenteredContainer = ({ children }) => {
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
-        alignItems: "center",
+        //alignItems: "center",
+        margin: "0 auto",
+        padding: "0",
         width: "100vw",
+        height: "100vh",
       }}
     >
-      <div
+      {/* <div
         style={{
           minHeight: "100vh",
-          maxWidth: "800px",
+          maxWidth: "100vw",
           width: "100%",
           margin: "0 auto",
           backgroundColor: "#fff",
         }}
-      >
-        {children}
-      </div>
+      > */}
+      {children}
+      {/* </div> */}
     </div>
   );
 };

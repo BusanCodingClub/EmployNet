@@ -11,6 +11,7 @@ import Project from "./pages/project";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin";
 import UserInfo from "./pages/userInfo";
+import PreviewDesign from "./pages/PreviewDesign";
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: "/user-info/:userId",
     element: <UserInfo />,
+  },
+  {
+    path: "/previewdesign",
+    element: <PreviewDesign />,
   },
 ]);
 
