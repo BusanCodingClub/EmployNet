@@ -7,7 +7,7 @@ const PreviewDesign = () => {
       <div>
         <h1>Preview Design</h1>
       </div>
-      <div>
+      <div className="grid grid-cols-3 place-items-center">
         <PrimaryButton>Primary Button</PrimaryButton>
         <SecondaryButton>Secondary Button</SecondaryButton>
       </div>

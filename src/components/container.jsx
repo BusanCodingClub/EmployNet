@@ -2,28 +2,24 @@ const CenteredContainer = ({ children }) => {
   return (
     <div
       style={{
-        //display: "flex",
-        //flexDirection: "column",
-        //justifyContent: "center",
-        //alignItems: "center",
-        textAlign: "center",
-        margin: "0 auto",
-        padding: "0",
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "center",
+        alignItems: "center",
         width: "100vw",
-        height: "100vh",
       }}
     >
-      {/* <div
+      <div
         style={{
           minHeight: "100vh",
-          maxWidth: "100vw",
+          maxWidth: "800px",
           width: "100%",
           margin: "0 auto",
           backgroundColor: "#fff",
         }}
-      > */}
-      {children}
-      {/* </div> */}
+      >
+        {children}
+      </div>
     </div>
   );
 };
