@@ -69,6 +69,7 @@ export default function UserProfile({ userData }) {
 
   return (
     <div className={styleClass.wrapper}>
+      {/* 프로필 수정 */}
       <div className="text-right mb-1">
         <button
           className="text-sm font-bold text-white rounded-md bg-[#00a8e8] hover:opacity-30 border-none focus:border-none focus:outline-none active:opacity-100"
@@ -78,7 +79,6 @@ export default function UserProfile({ userData }) {
         >
           수정
         </button>
-
         <Profile_Dialog isopen={isopen} dialogData={dialogData} />
       </div>
       <section className={profileTop.totalSection}>

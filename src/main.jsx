@@ -12,6 +12,7 @@ import Signup from "./pages/signup";
 import Signin from "./pages/signin";
 import UserInfo from "./pages/userInfo";
 import PreviewDesign from "./pages/PreviewDesign";
+import { RecoilRoot } from "recoil";
 
 const router = createBrowserRouter([
   {
@@ -58,6 +59,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RecoilRoot>
+      <RouterProvider router={router} />
+    </RecoilRoot>
   </React.StrictMode>
 );
