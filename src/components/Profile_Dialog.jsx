@@ -1,4 +1,4 @@
-const Profile_Dialog = ({ isopen, dialogData }) => {
+const Profile_Dialog = (isopen, dialogData) => {
   const dialogOpen = () => {
     dialogData(false);
   };
