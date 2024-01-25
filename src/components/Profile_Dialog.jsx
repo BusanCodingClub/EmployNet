@@ -6,6 +6,7 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
   const dialogOpen = () => {
     dialogData(false);
   };
+  console.log(ProfileData);
   return (
     <>
       {isopen && (
@@ -29,11 +30,28 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                         프로필 수정
                       </h3>
                       <div className="mt-2">
-                        <p className="text-sm text-gray-500">
-                          Are you sure you want to deactivate your account? All
-                          of your data will be permanently removed. This action
-                          cannot be undone.
-                        </p>
+                        <div className="text-start">
+                          <label
+                            htmlFor="price"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Name
+                          </label>
+                          <div className="relative mt-2 rounded-md shadow-sm">
+                            <input
+                              type="text"
+                              name="Text"
+                              id="Name"
+                              className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                              placeholder={ProfileData.name}
+                            />
+                            <div className="absolute inset-y-0 right-0 flex items-center">
+                              <label htmlFor="currency" className="sr-only">
+                                Currency
+                              </label>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>

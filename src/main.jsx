@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-
+import { RecoilRoot } from "recoil";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import "./index.css";
 import MainPage from "./pages/main";
@@ -11,8 +11,6 @@ import Project from "./pages/project";
 import Signup from "./pages/signup";
 import Signin from "./pages/signin";
 import UserInfo from "./pages/userInfo";
-import PreviewDesign from "./pages/PreviewDesign";
-import { RecoilRoot } from "recoil";
 
 const router = createBrowserRouter([
   {
@@ -50,10 +48,6 @@ const router = createBrowserRouter([
   {
     path: "/user-info/:userId",
     element: <UserInfo />,
-  },
-  {
-    path: "/previewdesign",
-    element: <PreviewDesign />,
   },
 ]);
 

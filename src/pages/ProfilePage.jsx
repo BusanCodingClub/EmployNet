@@ -11,7 +11,6 @@ const ProfilePage = () => {
     axiosInstance.get(API_URL.USER_PROFILE).then((response) => {
       console.log(response.data);
       setUserInfo(response.data);
-      setProfiledata(response.data);
     });
   }, []);
 
