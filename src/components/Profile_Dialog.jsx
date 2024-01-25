@@ -37,19 +37,71 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                           >
                             Name
                           </label>
-                          <div className="relative mt-2 rounded-md shadow-sm">
+                          <div className="relative rounded-md shadow-sm">
                             <input
                               type="text"
                               name="Text"
                               id="Name"
-                              className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                              className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
                               placeholder={ProfileData.name}
                             />
-                            <div className="absolute inset-y-0 right-0 flex items-center">
-                              <label htmlFor="currency" className="sr-only">
-                                Currency
-                              </label>
-                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-2">
+                        <div className="text-start">
+                          <label
+                            htmlFor="price"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Category
+                          </label>
+                          <div className="relative rounded-md shadow-sm">
+                            <input
+                              type="text"
+                              name="Text"
+                              id="Name"
+                              className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
+                              placeholder={ProfileData.category}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-2">
+                        <div className="text-start">
+                          <label
+                            htmlFor="price"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Carrer
+                          </label>
+                          <div className="relative rounded-md shadow-sm">
+                            <input
+                              type="text"
+                              name="Text"
+                              id="Name"
+                              className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
+                              placeholder={ProfileData.career}
+                            />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-2">
+                        <div className="text-start">
+                          <label
+                            htmlFor="price"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            OwnLink
+                          </label>
+                          <div className="relative rounded-md shadow-sm">
+                            <input
+                              type="text"
+                              name="Text"
+                              id="Name"
+                              className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
+                              placeholder={ProfileData.ownLink}
+                            />
                           </div>
                         </div>
                       </div>
@@ -59,7 +111,7 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                 <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                   <button
                     type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 sm:ml-3 sm:w-auto"
+                    className="inline-flex w-full justify-center rounded-md bg-blue-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 sm:ml-3 sm:w-auto"
                     onClick={dialogOpen}
                   >
                     Complete
