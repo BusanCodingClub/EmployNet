@@ -1,8 +1,9 @@
-import { useRecoilValue } from "recoil";
+import { useRecoilState } from "recoil";
 import { ProfileDataState } from "../state/atom";
 
 const Profile_Dialog = ({ isopen, dialogData }) => {
-  const ProfileData = useRecoilValue(ProfileDataState);
+  const [ProfileData, SetProfileData] = useRecoilState(ProfileDataState);
+
   const dialogOpen = () => {
     dialogData(false);
   };
@@ -32,7 +33,22 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                       <div className="mt-2">
                         <div className="text-start">
                           <label
-                            htmlFor="price"
+                            htmlFor="Image"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Image
+                          </label>
+                        </div>
+                        <input
+                          className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
+                          id="file_input"
+                          type="file"
+                        ></input>
+                      </div>
+                      <div className="mt-2">
+                        <div className="text-start">
+                          <label
+                            htmlFor="Name"
                             className="block text-sm font-medium leading-6 text-gray-900"
                           >
                             Name
@@ -40,7 +56,7 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                           <div className="relative rounded-md shadow-sm">
                             <input
                               type="text"
-                              name="Text"
+                              name="Name"
                               id="Name"
                               className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
                               placeholder={ProfileData.name}
@@ -51,45 +67,53 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                       <div className="mt-2">
                         <div className="text-start">
                           <label
-                            htmlFor="price"
+                            htmlFor="Category"
                             className="block text-sm font-medium leading-6 text-gray-900"
                           >
                             Category
                           </label>
                           <div className="relative rounded-md shadow-sm">
-                            <input
-                              type="text"
-                              name="Text"
-                              id="Name"
-                              className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
-                              placeholder={ProfileData.category}
-                            />
+                            <select
+                              id="Category"
+                              className="block bg-white w-full rounded-md border-0 py-2.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
+                            >
+                              <option selected>{ProfileData.category}</option>
+                              <option value="FE">웹 개발자(FE)</option>
+                              <option value="BE">웹 개발자(BE)</option>
+                              <option value="FULL">풀스택 개발자</option>
+                              <option value="DEV">데브옵스 엔지니어</option>
+                            </select>
                           </div>
                         </div>
                       </div>
                       <div className="mt-2">
                         <div className="text-start">
                           <label
-                            htmlFor="price"
+                            htmlFor="Carrer"
                             className="block text-sm font-medium leading-6 text-gray-900"
                           >
                             Carrer
                           </label>
                           <div className="relative rounded-md shadow-sm">
-                            <input
-                              type="text"
-                              name="Text"
-                              id="Name"
-                              className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
-                              placeholder={ProfileData.career}
-                            />
+                            <select
+                              id="Carrer"
+                              className="block bg-white w-full rounded-md border-0 py-2.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
+                            >
+                              <option selected>{ProfileData.career}</option>
+                              <option value="1">1년</option>
+                              <option value="2">2년</option>
+                              <option value="3">3년</option>
+                              <option value="4">4년</option>
+                              <option value="5">5년이상</option>
+                              <option value="10">10년이상</option>
+                            </select>
                           </div>
                         </div>
                       </div>
                       <div className="mt-2">
                         <div className="text-start">
                           <label
-                            htmlFor="price"
+                            htmlFor="OwnLink"
                             className="block text-sm font-medium leading-6 text-gray-900"
                           >
                             OwnLink
@@ -97,11 +121,94 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                           <div className="relative rounded-md shadow-sm">
                             <input
                               type="text"
-                              name="Text"
+                              name="OwnLink"
                               id="Name"
                               className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
                               placeholder={ProfileData.ownLink}
                             />
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-2">
+                        <div className="text-start">
+                          <label
+                            htmlFor="ProfileMent"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            ProfileMent
+                          </label>
+                          <div className="relative rounded-md shadow-sm">
+                            <textarea
+                              id="ProfileMent"
+                              rows="4"
+                              className="block p-2.5 w-full text-sm text-gray-900 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                              placeholder={ProfileData.profileMent}
+                            ></textarea>
+                          </div>
+                        </div>
+                      </div>
+                      <div className="mt-2">
+                        <div className="text-start">
+                          <label
+                            htmlFor="Stack"
+                            className="block text-sm font-medium leading-6 text-gray-900"
+                          >
+                            Stack
+                          </label>
+                          <div className="relative rounded-md shadow-sm">
+                            <input
+                              type="text"
+                              className="block w-full rounded-md border-0 py-1.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
+                              placeholder="Stack"
+                              onKeyUp={(e) => {
+                                if (e.key === "Enter") {
+                                  SetProfileData({
+                                    ...ProfileData,
+                                    tagLine: {
+                                      ...ProfileData.tagLine,
+                                      stacks: [
+                                        ...ProfileData.tagLine.stacks,
+                                        e.target.value,
+                                      ],
+                                    },
+                                  });
+                                  e.target.value = "";
+                                }
+                              }}
+                            />
+                          </div>
+                          <div>
+                            {ProfileData.tagLine.stacks.map((item, index) => {
+                              return (
+                                <span
+                                  key={index}
+                                  className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800 mr-2"
+                                >
+                                  {item}
+                                  <button
+                                    className="ml-1 px-1 py-0"
+                                    onClick={() => {
+                                      SetProfileData({
+                                        ...ProfileData,
+                                        tagLine: {
+                                          ...ProfileData.tagLine,
+                                          stacks: [
+                                            ...ProfileData.tagLine.stacks.filter(
+                                              (idx) => {
+                                                return idx !== index;
+                                              }
+                                            ),
+                                          ],
+                                        },
+                                      });
+                                    }}
+                                  >
+                                    X
+                                  </button>
+                                  {/* 아직 여기 데이터 삭제는 미제 */}
+                                </span>
+                              );
+                            })}
                           </div>
                         </div>
                       </div>
