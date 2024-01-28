@@ -7,7 +7,19 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
   const dialogOpen = () => {
     dialogData(false);
   };
-  console.log(ProfileData);
+  const CareerOnChange = (e) => {
+    SetProfileData({
+      ...ProfileData,
+      career: e.target.value,
+    });
+  };
+  const CategoryOnChange = (e) => {
+    SetProfileData({
+      ...ProfileData,
+      category: e.target.value,
+    });
+  };
+  //console.log(ProfileData);
   return (
     <>
       {isopen && (
@@ -73,16 +85,28 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                             Category
                           </label>
                           <div className="relative rounded-md shadow-sm">
-                            <select
-                              id="Category"
-                              className="block bg-white w-full rounded-md border-0 py-2.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
-                            >
-                              <option selected>{ProfileData.category}</option>
-                              <option value="FE">웹 개발자(FE)</option>
-                              <option value="BE">웹 개발자(BE)</option>
-                              <option value="FULL">풀스택 개발자</option>
-                              <option value="DEV">데브옵스 엔지니어</option>
-                            </select>
+                            <form>
+                              <select
+                                id="Category"
+                                value={ProfileData.category}
+                                onChange={CategoryOnChange}
+                                className="block bg-white w-full rounded-md border-0 py-2.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
+                              >
+                                {/* <option selected>{ProfileData.category}</option> */}
+                                <option value="웹 개발자(FE)">
+                                  웹 개발자(FE)
+                                </option>
+                                <option value="웹 개발자(BE)">
+                                  웹 개발자(BE)
+                                </option>
+                                <option value="풀스택 개발자">
+                                  풀스택 개발자
+                                </option>
+                                <option value="데브옵스 엔지니어">
+                                  데브옵스 엔지니어
+                                </option>
+                              </select>
+                            </form>
                           </div>
                         </div>
                       </div>
@@ -95,18 +119,22 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                             Carrer
                           </label>
                           <div className="relative rounded-md shadow-sm">
-                            <select
-                              id="Carrer"
-                              className="block bg-white w-full rounded-md border-0 py-2.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
-                            >
-                              <option selected>{ProfileData.career}</option>
-                              <option value="1">1년</option>
-                              <option value="2">2년</option>
-                              <option value="3">3년</option>
-                              <option value="4">4년</option>
-                              <option value="5">5년이상</option>
-                              <option value="10">10년이상</option>
-                            </select>
+                            <form>
+                              <select
+                                id="Carrer"
+                                value={ProfileData.career}
+                                onChange={CareerOnChange}
+                                className="block bg-white w-full rounded-md border-0 py-2.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
+                              >
+                                {/* <option selected>{ProfileData.career}</option> */}
+                                <option value="1년">1년</option>
+                                <option value="2년">2년</option>
+                                <option value="3년">3년</option>
+                                <option value="4년">4년</option>
+                                <option value="5년이상">5년이상</option>
+                                <option value="10년이상">10년이상</option>
+                              </select>
+                            </form>
                           </div>
                         </div>
                       </div>
