@@ -1,3 +1,5 @@
+import ChatList from "../components/chat/ChatList";
+import Chat from "../components/chat/ChatList";
 import CenteredContainer from "../components/container";
 import Navbar from "../components/navbar";
 
@@ -19,6 +21,7 @@ const MainPage = () => {
     <CenteredContainer>
       <Navbar />
       <Introduction />
+      <ChatList />
     </CenteredContainer>
   );
 };
