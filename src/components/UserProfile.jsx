@@ -4,6 +4,8 @@ import { useState } from "react";
 
 import TagLine from "./profile/TagLine";
 import TabMenu from "./profile/TabMenu";
+import ModalProvider from "./chat/ModalProvider";
+import ChatList from "./chat/ChatList";
 
 export default function UserProfile({ userData }) {
   //props
@@ -25,6 +27,7 @@ export default function UserProfile({ userData }) {
   //state
   const [menuActive, setMenuActive] = useState(0);
   const [moreBtnClick, setMoreBtnClick] = useState(false);
+  const [chatStep, setChatStep] = useState(0);
 
   //tailWindClass
   const styleClass = {
@@ -106,6 +109,9 @@ export default function UserProfile({ userData }) {
             )}
           </ul>
         </div>
+        <button className="self-end ml-auto" onClick={() => setChatStep(1)}>
+          채팅하기
+        </button>
       </section>
       <div className={profileBottom.totalSection}>
         <ul className={profileBottom.tapMenuArea}>
@@ -135,6 +141,11 @@ export default function UserProfile({ userData }) {
           </ul>
         </section>
       </div>
+      {chatStep === 1 && (
+        <ModalProvider>
+          <ChatList />
+        </ModalProvider>
+      )}
     </div>
   );
 }

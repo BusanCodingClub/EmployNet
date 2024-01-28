@@ -17,7 +17,11 @@ const ProfilePage = () => {
   return (
     <CenteredContainer>
       <Navbar />
-      <div>{userInfo ? <Profile userData={userInfo} /> : null}</div>
+      <div>
+        {userInfo ? (
+          <Profile userData={userInfo} setChatStep={() => setChatStep(1)} />
+        ) : null}
+      </div>
     </CenteredContainer>
   );
 };
