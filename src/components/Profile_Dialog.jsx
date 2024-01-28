@@ -188,17 +188,26 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                               placeholder="Stack"
                               onKeyUp={(e) => {
                                 if (e.key === "Enter") {
-                                  SetProfileData({
-                                    ...ProfileData,
-                                    tagLine: {
-                                      ...ProfileData.tagLine,
-                                      stacks: [
-                                        ...ProfileData.tagLine.stacks,
-                                        e.target.value,
-                                      ],
-                                    },
-                                  });
-                                  e.target.value = "";
+                                  if (
+                                    !ProfileData.tagLine.stacks.includes(
+                                      e.target.value
+                                    )
+                                  ) {
+                                    SetProfileData({
+                                      ...ProfileData,
+                                      tagLine: {
+                                        ...ProfileData.tagLine,
+                                        stacks: [
+                                          ...ProfileData.tagLine.stacks,
+                                          e.target.value,
+                                        ],
+                                      },
+                                    });
+                                    e.target.value = "";
+                                  } else {
+                                    alert("중복된 스택입니다.");
+                                    e.target.value = "";
+                                  }
                                 }
                               }}
                             />
