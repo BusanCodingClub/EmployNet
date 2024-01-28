@@ -92,7 +92,6 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                                 onChange={CategoryOnChange}
                                 className="block bg-white w-full rounded-md border-0 py-2.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
                               >
-                                {/* <option selected>{ProfileData.category}</option> */}
                                 <option value="웹 개발자(FE)">
                                   웹 개발자(FE)
                                 </option>
@@ -126,7 +125,6 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                                 onChange={CareerOnChange}
                                 className="block bg-white w-full rounded-md border-0 py-2.5 pl-2 pr-20 text-gray-900 ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-500 sm:text-sm sm:leading-6"
                               >
-                                {/* <option selected>{ProfileData.career}</option> */}
                                 <option value="1년">1년</option>
                                 <option value="2년">2년</option>
                                 <option value="3년">3년</option>
@@ -222,7 +220,7 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                                           ...ProfileData.tagLine,
                                           stacks: [
                                             ...ProfileData.tagLine.stacks.filter(
-                                              (idx) => {
+                                              (item, idx) => {
                                                 return idx !== index;
                                               }
                                             ),
@@ -233,7 +231,6 @@ const Profile_Dialog = ({ isopen, dialogData }) => {
                                   >
                                     X
                                   </button>
-                                  {/* 아직 여기 데이터 삭제는 미제 */}
                                 </span>
                               );
                             })}
